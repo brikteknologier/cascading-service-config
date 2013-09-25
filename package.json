@@ -1,0 +1,28 @@
+{
+  "name": "cascading-service-config",
+  "version": "0.1.0",
+  "description": "dry configuration for a multi-service system",
+  "main": "csc.js",
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://www.github.com/brikteknologier/cascading-service-config"
+  },
+  "keywords": [
+    "service",
+    "config",
+    "cascading",
+    "inherit",
+    "inheritance",
+    "protypical",
+    "protypal",
+    "dry"
+  ],
+  "author": "Jon packer",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "~1.13.0"
+  }
+}
