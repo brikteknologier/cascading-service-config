@@ -12,8 +12,8 @@ module.exports = function(config, domain) {
     if (config[key].port == null) return;
     services[key] = url.format({
       port: config[key].port,
-      hostname: config.internalServiceHostname || 'localhost',
-      protocol: config.internalServiceProtocol || 'http'
+      hostname: config[key].internalServiceHostname || 'localhost',
+      protocol: config[key].internalServiceProtocol || 'http'
     });
   });
 
