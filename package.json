@@ -1,6 +1,6 @@
 {
   "name": "cascading-service-config",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "dry configuration for a multi-service system",
   "main": "csc.js",
   "scripts": {
