@@ -47,4 +47,11 @@ describe('CSC', function() {
     var config = csc(lolconfig, 'stout');
     assert.equal(config.stoutmeal.stout, 'http://localhost:6005');
   });
+  it('should be able to configure service access points, per service', function() {
+    var newconf = JSON.parse(JSON.stringify(lolconfig));
+    newconf.sahti.internalServiceProtocol = 'https';
+    var config = csc(lolconfig, 'stout');
+    assert.equal(config.stout, 'http://localhost:6005');
+    assert.equal(config.sahti, 'https://localhost:6003');
+  });
 });
