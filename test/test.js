@@ -43,6 +43,10 @@ describe('CSC', function() {
     var config = csc(lolconfig, 'stout');
     assert.equal(config.sahti, 'http://localhost:6003');
   });
+  it('should return root config when given domain doesnt exist', function() {
+    var config = csc(lolconfig, 'potato');
+    assert.equal(config.sahti.port, 6003);
+  });
   it('non-service root objects should also inherit service locations', function() {
     var config = csc(lolconfig, 'stout');
     assert.equal(config.stoutmeal.stout, 'http://localhost:6005');

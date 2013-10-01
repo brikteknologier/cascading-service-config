@@ -163,3 +163,8 @@ var service2config = require('cascading-service-config')(configSource, 'service2
 console.log(service2config.port);
 // -> 8403
 ```
+
+## `csc(configSourceObject, [domain])`
+
+Reads a cascading service config file and returns a config for the given domain.
+If the domain does not exist, the root config is returned.
