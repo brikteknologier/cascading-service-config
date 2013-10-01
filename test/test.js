@@ -5,6 +5,7 @@ var lolconfig = {
   "neo4j": "http://localhost:7474/",
   "internalServiceHostname": "localhost",
   "internalServiceProtocol": "http",
+  "arrayOfThings": [1,2,3],
   "stoutmeal": {
     "cookie": "authKey",
     "store": {
@@ -38,6 +39,10 @@ describe('CSC', function() {
     var config = csc(lolconfig, 'stout');
     assert.equal(config.stoutmeal.cookie, 'authKey');
     assert.equal(config.stoutmeal.store.type, 'redis');
+  });
+  it('shouldnt mangle the prototype chain of arrays', function() {
+    var config = csc(lolconfig, 'stout');
+    assert.equal(config.arrayOfThings.forEach, [].forEach);
   });
   it('should transform root service objects to their location', function() {
     var config = csc(lolconfig, 'stout');
