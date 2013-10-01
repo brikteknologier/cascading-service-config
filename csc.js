@@ -1,7 +1,5 @@
 var url = require('url');
 module.exports = function(config, domain) {
-  if (!config[domain]) throw new Error(domain + ' is not a valid domain');
-
   config = JSON.parse(JSON.stringify(config));
 
   var services = Object.create(config);
@@ -17,5 +15,5 @@ module.exports = function(config, domain) {
     });
   });
 
-  return config[domain];
+  return config[domain] || config;
 };
