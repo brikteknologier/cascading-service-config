@@ -5,7 +5,7 @@ module.exports = function(config, domain) {
   var services = Object.create(config);
 
   Object.keys(config).forEach(function(key) {
-    if (typeof config[key] != 'object') return;
+    if (typeof config[key] != 'object' || Array.isArray(config[key])) return;
     config[key].__proto__ = services;
     if (config[key].port == null) return;
     services[key] = url.format({
