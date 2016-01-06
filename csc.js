@@ -7,7 +7,7 @@ module.exports = function(config, domain) {
   Object.keys(config).forEach(function(key) {
     if (typeof config[key] != 'object' || Array.isArray(config[key])) return;
     config[key].__proto__ = services;
-    if (config[key].port == null) return;
+    if (config[key].port == null || config[key]._isNotService === true) return;
     services[key] = url.format({
       port: config[key].port,
       hostname: config[key].internalServiceHostname || 'localhost',
